@@ -99,6 +99,8 @@ const playSong = (id) => {
   playButton.classList.add("playing");
   highlightCurrentSong();
 
+  setPlayerDisplay();
+
   audio.play();
 };
 
@@ -135,6 +137,8 @@ const setPlayerDisplay = ()=>{
   const songArtist = document.getElementById("player-song-artist");
   const currentTitle = userData?.currentSong?.title;
   const currentArtist = userData?.currentSong?.artist;
+  playingSong.textContent = currentArtist ? currentTitle : "";
+  songArtist.textContent = currentArtist ? currentArtist : "";
 };
 
 
